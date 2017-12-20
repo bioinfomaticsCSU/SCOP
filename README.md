@@ -89,7 +89,7 @@ Scaffolder: SCOP
 	./SCOP contigs.fa paired_left1.fastq paired_right1.fastq 76 650 0.07 0.2 2 0 0 paired_left2.fastq paired_right2.fastq 75 2700 0.07 0.2 2 0 0 result_com
 	This command will produce the scaffolding result: result_com_ScaffoldSet.fa
 ```
-6）Suggestion
+6) Suggestion
 ```
 	When you want to enhance the accuracy of scaffolding results, please set large numbers for the parameters  <min_weight> and <min_number>;
 	When the coverage number of paired read library is small (smaller than 30), you can try small numbers for the parameters <min_weight> and <min_number>;   
