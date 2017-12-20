@@ -42,7 +42,7 @@ Scaffolder: SCOP
 	Please install pysam module we used is pysam-0.8.4, which can be downloaded from https://pypi.python.org/pypi/pysam/0.8.4. 
 	Please install Bowtie2, which can be downloaded from https://sourceforge.net/projects/bowtie-bio/files/bowtie2/2.3.2. And add it into the system environment variable.
 	Please install Samtools, which can be downloaded from https://sourceforge.net/projects/samtools/files/samtools/. And add it into the system environment variable.
-
+```
 3) Installing
 ```
 	SCOP should run on Linux operating sysetm with gcc. We test SCOP using gcc4.6.3 on Ubuntu.
@@ -51,7 +51,7 @@ Scaffolder: SCOP
 	export BAMTOOLS_HOME=/path_bamtools/
 	cp /path_bamtools/lib/* /usr/lib/
 	make all
-
+```
 4) Running
 ```
 	Run command line: 
@@ -78,7 +78,7 @@ Scaffolder: SCOP
 		It is equal to 0 or 1, 0 represents that the edge weight calculated by arithmetic mean, 1 represents that the edge weight calculated by geometric mean.
 	<scaffold_file_name>: 
 		The output file name, this file includes scaffolds produced by SCOP. 
-
+```
 5) Example
 ```
 	(a). If there is one read library:
@@ -90,9 +90,11 @@ Scaffolder: SCOP
 	This command will produce the scaffolding result: result_com_ScaffoldSet.fa
 ```
 6）Suggestion
-
+```
 	When you want to enhance the accuracy of scaffolding results, please set large numbers for the parameters  <min_weight> and <min_number>;
 	When the coverage number of paired read library is small (smaller than 30), you can try small numbers for the parameters <min_weight> and <min_number>;   
-
+```
 7) Evaluation
+```
 	You can use the tool  QUAST (http://bioinf.spbau.ru/quast) or GAGE (in the directory GAGE) to evaluate results. 
+```
