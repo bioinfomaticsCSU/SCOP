@@ -11,8 +11,8 @@
 #include <vector>
 #include <typeinfo>
 
-#include "scaffolding.h"
-#include "scaffoldgraph.h"
+#include "executeScaffolding.h"
+#include "generateGraph.h"
 #include "lp/lp_lib.h"
 
 using namespace std;

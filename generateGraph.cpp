@@ -11,8 +11,8 @@
 #include <vector>
 #include <exception>
 
-#include "scaffoldgraph.h"
-#include "scaffolding.h"
+#include "generateGraph.h"
+#include "executeScaffolding.h"
 #include "lp/lp_lib.h"
 
 

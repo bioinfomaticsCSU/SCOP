@@ -10,7 +10,7 @@
 #include <math.h>
 #include <vector>
 
-#include "scaffoldgraph.h"
+#include "generateGraph.h"
 
 using namespace std;
 

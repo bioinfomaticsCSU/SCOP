@@ -9,8 +9,8 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <unistd.h>
-#include "scaffoldgraph.h"
-#include "scaffolding.h"
+#include "generateGraph.h"
+#include "executeScaffolding.h"
 #include "lp/lp_lib.h"
 
 using namespace std;
@@ -203,7 +203,7 @@ int main(int argc, char *argv[]){
 		string muStr=int_Tostring(mu);
 		string sigmaStr=int_Tostring(sigma1);
 		string paraStr_CfgFileName=fGetCfgFileName();
-		string shell=string("python ")+paraStr_CfgFileName+string("mec.py -bam ")+openpath+string("/mapping/correction_sort")+num+string(".bam -a 0.4 -b 0.5 -m ")+muStr+string(" -s ")+sigmaStr+string(" -i ")+argv[1]+string(" -o ")+openpath+string("/mapping/correctionContig.fasta");
+		string shell=string("python ")+paraStr_CfgFileName+string("contigClassify.py -bam ")+openpath+string("/mapping/correction_sort")+num+string(".bam -a 0.4 -b 0.5 -m ")+muStr+string(" -s ")+sigmaStr+string(" -i ")+argv[1]+string(" -o ")+openpath+string("/mapping/correctionContig.fasta");
 		cout<<shell<<endl;
 		shellExe(shell);
 		string shell2=string("python ")+paraStr_CfgFileName+string("contigSort_origin.py ")+openpath+string("/mapping/correctionContig.fasta ")+openpath+string("/mapping/correctionContig1.fasta ");

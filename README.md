@@ -3,7 +3,7 @@
 License
 =========
 
-Copyright (C) 2017  Min Li(limin@mail.csu.edu.cn), Jianxin Wang(jxwang@mail.csu.edu.cn)
+Copyright (C) 2017  Min Li(limin@mail.csu.edu.cn), Li Tang(tangli_csu@csu.edu.cn)
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -18,7 +18,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program; if not, see <http://www.gnu.org/licenses/>.
 
-Min Li(limin@mail.csu.edu.cn), Jianxin Wang(jxwang@mail.csu.edu.cn)
+Min Li(limin@mail.csu.edu.cn), Li Tang(tangli_csu@csu.edu.cn)
 School of Information Science and Engineering
 Central South University
 ChangSha
