@@ -41,7 +41,7 @@ int WriteScript_corr(string leftread,string rightread,string contig,string outpu
     string path;
     string num=int_Tostring(i);
     pos=output.find_last_of('/');
-    path=output.substr(0,pos)+"/mapping/BOSS_alignScript_corr"+num+".sh";
+    path=output.substr(0,pos)+"/mapping/SCOP_alignScript_corr"+num+".sh";
     cout<<"path:"<<path<<endl;
     char * openPath = new char[50];
     openPath=(char*)path.c_str();
@@ -70,7 +70,7 @@ int WriteScript(string leftread,string rightread,string contig,string output,int
     string path;
     string num=int_Tostring(i);
     pos=output.find_last_of('/');
-    path=output.substr(0,pos)+"/mapping/BOSS_alignScript"+num+".sh";
+    path=output.substr(0,pos)+"/mapping/SCOP_alignScript"+num+".sh";
     cout<<"path:"<<path<<endl;
     char * openPath = new char[50];
     openPath=(char*)path.c_str();
@@ -128,7 +128,7 @@ int main(int argc, char *argv[]){
     
     if(argc == 1){
         cout<<"Command line:"<<endl;
-        cout<<"./boss <contigs.fa> <leftread.fa> <rightread.fa> <read_length>"<<endl; 
+        cout<<"./SCOP <contigs.fa> <leftread.fa> <rightread.fa> <read_length>"<<endl; 
         cout<<"<insert_size> <std> <min_weight> <min_number> <is_paired_end>"<<endl;
         cout<<"<edge_weight_method> <scaffold_file_name>"<<endl;
         cout<<endl;
@@ -161,10 +161,10 @@ int main(int argc, char *argv[]){
         cout<<'\t'<<"by arithmetic mean, 1 represents that the edge weight calculated"<<endl;
         cout<<'\t'<<"by geometric mean. In default, edge_weight_method = 0."<<endl;
         cout<<"<scaffold_file_name>:"<<endl; 
-        cout<<'\t'<<"Output file name, the file includes scaffolds produced by BOSS."<<endl;
+        cout<<'\t'<<"Output file name, the file includes scaffolds produced by SCOP."<<endl;
         cout<<endl;
         cout<<"Example:"<<endl;
-        cout<<'\t'<<"./boss contigs.fa left.bam right.bam 76 650 0.07 0.2 2 0 0 ecoli"<<endl;
+        cout<<'\t'<<"./SCOP contigs.fa left.bam right.bam 76 650 0.07 0.2 2 0 0 ecoli"<<endl;
         cout<<'\t'<<"This command will produce scaffolding file, ecoli_ScaffoldSet.fa."<<endl;
         exit(0);
     }
@@ -187,8 +187,6 @@ int main(int argc, char *argv[]){
 	else{
 		cout<<"create path failed! "<<endl;
 	}
-	//alignpath_corr=openpath+"/mapping/BOSS_alignScript_corr.sh";
-	//alignpath=openpath+"/mapping/BOSS_alignScript.sh";
 
 	string contig;
 	if(libraryCount==1){
@@ -196,7 +194,7 @@ int main(int argc, char *argv[]){
 			contig=argv[1];
 		WriteScript_corr(argv[2+9*i],argv[2+9*i+1],contig,argv[argc-1],i);
 		string num=int_Tostring(i);
-		bashExe(openpath+"/mapping/BOSS_alignScript_corr"+num+".sh");
+		bashExe(openpath+"/mapping/SCOP_alignScript_corr"+num+".sh");
 		int mu=atoi(argv[2+9*i+3]);
 		float sigma=mu*atof(argv[2+9*i+4]);
 		int sigma1=(int)round(sigma);
@@ -220,7 +218,7 @@ int main(int argc, char *argv[]){
 			WriteScript(argv[2+9*i],argv[2+9*i+1],openpath+string("/mapping/correctionContig1.fasta "),argv[argc-1],i);
 		}
 		string num=int_Tostring(i);
-        bashExe(openpath+"/mapping/BOSS_alignScript"+num+".sh");
+        bashExe(openpath+"/mapping/SCOP_alignScript"+num+".sh");
     }
 	
 
@@ -228,13 +226,13 @@ int main(int argc, char *argv[]){
     time(&timep);
     ofstream ocout;
     char * bossInforFileName = new char[20];
-    strcpy(bossInforFileName, "BOSS_infor.txt");
+    strcpy(bossInforFileName, "SCOP_infor.txt");
     ocout.open(bossInforFileName);
     for(int i = 0; i<argc; i++){
         ocout<<argv[i]<<" ";
     }
     ocout<<endl;
-    ocout<<"BOSS start time:"<<asctime(gmtime(&timep))<<endl;
+    ocout<<"SCOP start time:"<<asctime(gmtime(&timep))<<endl;
 
     InputArg * inputArg = new InputArg[libraryCount];
 	string input1[libraryCount],input2[libraryCount],num;
@@ -290,7 +288,7 @@ int main(int argc, char *argv[]){
     OutPutScaffoldSet(scaffoldSet, contigSet, contigCount, argv[argc-1]);
     time_t timep1;
     time(&timep1);
-    ocout<<"BOSS end time:"<<asctime(gmtime(&timep1))<<endl; 
+    ocout<<"SCOP end time:"<<asctime(gmtime(&timep1))<<endl; 
     ocout<<"AllTime:"<<difftime(timep1, timep)<<endl;
     
 }

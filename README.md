@@ -37,11 +37,11 @@ Scaffolder: SCOP
 2) Before installing and running
 ```	
 	Please build and install bamtools from https://github.com/pezmaster31/bamtools. And add enviroment vairable BAMTOOLS_HOME which is the path of bamtools.
-	Please install Python2.7.11 from https://www.python.org/download/releases/2.7/. And make sure python2.7 is installed in the system default path.  
-	Please install Cython-0.25.2, which can be downloaded from https://pypi.python.org/pypi/Cython/0.25.2.
-	Please install pysam module we used is pysam-0.8.4, which can be downloaded from https://pypi.python.org/pypi/pysam/0.8.4. 
-	Please install Bowtie2, which can be downloaded from https://sourceforge.net/projects/bowtie-bio/files/bowtie2/2.3.2. And add it into the system environment variable.
-	Please install Samtools, which can be downloaded from https://sourceforge.net/projects/samtools/files/samtools/. And add it into the system environment variable.
+	Please install Python2.7.11, which can be downloaded from https://www.python.org/download/releases/2.7/. And make sure python2.7 is installed in the system default path.  
+	Please install Cython-0.25.2, which can be downloadedfrom https://pypi.python.org/pypi/Cython/0.25.2.
+	Please install pysam-0.8.4, which can be downloaded from https://pypi.python.org/pypi/pysam/0.8.4. 
+	Please install Bowtie2, which can be downloaded from https://sourceforge.net/projects/bowtie-bio/files/bowtie2/2.3.2. And add the path of Bowtie2 into the system environment variable.
+	Please install Samtools, which can be downloaded from https://sourceforge.net/projects/samtools/files/samtools/. And add the path of samtools into the system environment variable.
 ```
 3) Installing
 ```
