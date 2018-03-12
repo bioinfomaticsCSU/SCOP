@@ -35,6 +35,7 @@ string int_Tostring(int i){
     return str;
 }
 
+
 int WriteScript_corr(string leftread,string rightread,string contig,string output,int i){
     ofstream location_out;
     int pos;
@@ -169,12 +170,28 @@ int main(int argc, char *argv[]){
         exit(0);
     }
 	
+	
     if((argc-3)%9!=0){
         cout<<"Please Input Correct Arguments!"<<endl;
         exit(0);
     }
     int libraryCount=(argc-3)/9;
-	
+	for(int i = 0; i < libraryCount; i++){
+		int length=atoi(argv[2+9*i+2]);
+		string num=int_Tostring(i);
+		if(length>200){
+			string paraStr_CfgFileName=fGetCfgFileName();
+			string shell=string("python ")+paraStr_CfgFileName+string("preprocess.py ")+argv[2+9*i]+string(" ")+argv[2+9*i+1]+string(" preprocess_1.fastq preprocess_2.fastq ")+string(" 100");
+			cout<<shell<<endl;
+			shellExe(shell);
+			string shell2=string("cp preprocess_1.fastq ")+argv[2+9*i];
+			cout<<shell2<<endl;
+			shellExe(shell2);
+			string shell3=string("cp preprocess_2.fastq ")+argv[2+9*i+1];
+			cout<<shell3<<endl;
+			shellExe(shell3);
+		}
+	}
 	string path=argv[argc-1];
     string openpath;
 	int pos=path.find_last_of('/');
